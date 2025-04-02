@@ -8,6 +8,7 @@ import (
 
 func main() {
 	//Prueba con la pila
+	//Para estos casos solamente se probo agregar valores dentro de la pila
 	pila := stack.Stack{}
 	pila.Push(5)
 	pila.Push(10)
@@ -17,17 +18,19 @@ func main() {
 	pila.Printpila()
 
 	top, err := pila.SkTop()
-	//Pruebas para stak
+
+	//Para este caso solamente se probo cual es el top para ver que si se agrego bien
 	if err == nil {
 		fmt.Println("El item Top es: ", top)
 	}
+	//Quitamos los valores eh imprimomos el resultado hasya que quede vacio
 	pila.Pop()
 	pila.Printpila()
 	pila.Pop()
 	pila.Pop()
 	pila.Pop()
 	pila.Printpila()
-	//Prueba para la queue
+	//Prueba para la queue creamos y agregamos los valores
 	queque := queue.Queue{}
 	//Datos
 	queque.Inqueue(1)
@@ -35,13 +38,13 @@ func main() {
 	queque.Inqueue(3)
 	queque.Inqueue(4)
 	queque.Inqueue(5)
-	//Checar datos
+	//Checar datos si entraron correctamete
 	queque.PrintQueue()
-	//Pruebas
+	//sacamos los 3 valores
 	queque.Enqueue()
 	queque.Enqueue()
 	queque.Enqueue()
-
+	// comprobamo que salieron bien del queue
 	queque.PrintQueue()
 
 	queque.Enqueue()
@@ -50,6 +53,7 @@ func main() {
 	//Pruebas para Diccionarios4
 
 	dicc := make(map[string]int)
+	//incertamos datos
 	dicc["Uno"] = 1
 	dicc["Dos"] = 2
 	dicc["Tres"] = 3
@@ -59,10 +63,14 @@ func main() {
 	//	"Dos":  2,
 	//	"Tres": 3,
 	//}
-
+	//imprimimos los resultados
 	fmt.Println("")
 	fmt.Println(dicc)
+	//eliminamos el segundo valor del dicionario
 	delete(dicc, "Dos")
+	fmt.Println(dicc)
+	//no se pudo vaciar el diccionario dado a que mandaba error
+	//dicc := make(map[string]int)
 	fmt.Println(dicc)
 	//fmt.Println(diccionario)
 
